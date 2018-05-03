@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{positions[3]}}</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+</head>
+
+<!-- HEADER -->
+<header>
+    <h1>myfuture.com</h1>
+</header>
+
+<body>
+
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="#jobs">JOBS</a></li>
+        <li><a href="/views/about.html">About</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+
+    </ul>
+</nav>
+<br>
+
+<!-- Lists the details of instance of position -->
+<div class="job" style="margin:auto">
+    <div class="location">{{positions[4]}}</div> <!-- area -->
+    <div class="jobtitle">{{positions[3]}}</div> <!-- position -->
+    <div class="company">{{positions[5]}}</div> <!-- company -->
+    <div>{{positions[0]}} {{positions[2]}}</div> <!-- id, nickname -->
+    <div class="date">{{positions[1]}}</div> <!-- date -->
+    <div class="description">{{!positions[6]}}</div> <!-- description -->
+    <a href="/">Return Home</a>
+</div>
+
+</body>
+
+
+<!-- FOOTER -->
+<footer>
+    <center>
+        <div class="wrapper_f">
+            <p class="footer_title">terms & conditions</p>
+            <p class="footer_title"> contact us</p>
+            <p>phone: <a href="tel:+61412345678"> +614 1234 5678</a></p>
+            <p>email: <a href="mailto:helpme@future.com">helpme@future.com</a>.</p></div>
+    </center>
+</footer>
+
+</html>

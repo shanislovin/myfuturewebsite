@@ -1,0 +1,432 @@
+/* CSS Stylesheet for the COMP249 Jobs Board */
+/* Author: Shanis Lovin */
+
+/*  header of the page, sets the header colour, font family, font color and padding.
+    font color is a dark grey, background is an off-white. */
+header {
+    font-family: sans-serif;
+	color: #4d5057;
+    background-color: #fcfcfc;
+	padding: 20px;
+	padding-bottom: 25px;
+	margin-bottom: -45px;
+	text-decoration: none;
+}
+
+/* body of the page, sets the background color to an off-white. */
+body {
+    margin: 0;
+    padding: 0;
+    background: #efefef;
+    }
+
+/*  off-white background of navigation bar, no list style as they
+    will be designed as buttons. The bottom of the div section has
+    a shadow that appears on top of the header image. */
+nav ul {
+	list-style: none;
+    margin-top: -45px;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #fcfcfc;
+	position: relative;
+	box-shadow: 0px 6px 8px -3px rgba(81, 81, 81, 1);
+}
+
+/*  the individual buttons float left and all have padding so they are
+    separated  from each other */
+nav li {
+	padding-right: 10px;
+    float: left;
+}
+
+/*  nav bar button design; slight letter spacing, light pink background
+    color, curved border radius. Displayed as block so the sizing remains
+    consistent. */
+nav li a {
+	font-family: 'Ariel', sans-serif;
+    font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+	width: 105px;
+    text-decoration: none;
+	background-color: #f4afb4;
+	border-radius: 4px;
+}
+
+/*  when hovering over the buttons, a shadow is shown around the button
+    showing the user that they are hovering. */
+nav li a:hover {
+    box-shadow: 0px 2px 8px rgba(140,140,140, 1);
+}
+
+/*  sets the font details for the "Logged in as {{user}}" text. */
+.loggedinas {
+    margin-top: -20px;
+    float:right;
+    font-family: 'Verdana', sans-serif;
+    color: #454851;
+	font-size: 1em;
+}
+
+/*  sets the font design of the LOGIN button. Added invisible border for smooth transition when hovering. */
+.login_button {
+    font-family: 'Verdana', sans-serif;
+    color: #454851;
+	font-size: 1.1em;
+	font-weight: 800;
+	background-color: #fcfcfc;
+	cursor: pointer;
+	float:right;
+	border: solid;
+	border-radius: 8px;
+    border-width: 0.8px;
+	padding: 5px;
+	border-color: #fcfcfc;
+}
+
+/*  adds a green border and font when hovering over the LOGIN button. */
+.login_button:hover {
+    color: #4CAF50;
+    padding: 5px;
+    border-radius: 8px;
+    border-color: green;
+    transition: 0.5s;
+}
+
+/* login user icon with credit to feathericons, and padding in relation to LOGIN button */
+.user_ico {
+    height: 18px;
+    padding-top: 2px;
+	color: #3d3d3d;
+}
+
+/*  sets the position, font and design of the div containing the login form. The box is curved,
+    has a shadow, and sits next to the LOGIN button. Initially it is hidden (max-height:0). */
+.dropdown{
+    float:right;
+    background-color: #fff;
+    width: 20vw;
+    border-radius: 4px;
+    box-shadow: 0 0 40px -10px #000;
+    color: #505050;
+    max-height:0;
+    margin-top: -20px;
+    margin-right: 20px;
+    overflow: hidden;
+    transition:all .5s;
+}
+
+/*  if the user clicks the LOGIN button, dropdown's overflow is set to visible, and the max
+    height changes to show all the content (like an accordion). */
+.down{
+  max-height:150px;
+}
+
+/*  sets the font design of the login_fail form. */
+.login_fail {
+    font-family: 'Verdana', sans-serif;
+}
+
+/*  login form input box design, credit to Stas Melnikov for field design at
+    https://codepen.io/melnik909/pen/BZpJLN. Adds a green bar under the input
+    fields. */
+.login_input{
+  margin: 7px;
+  margin-right: -10px;
+  float: right;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 9vw;
+  appearance: none;
+  border-radius: 0;
+  border-style: solid;
+  border-color: green;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  color: black;
+}
+
+/*  when user clicks on the form input, the bar transitions into a lighter green. */
+.login_input:focus{
+  outline: none;
+  border-color: #4CAF50;
+  transition: 0.5s;
+}
+
+/*  adding image to home page, credit to images.pexels.com for free use stock photo.
+    Background is set to not repeat, and uses vw to change what part of the image you see
+    depending on the view window size. */
+.image_header {
+    padding-top: 100px;
+    background-image: url("https://images.pexels.com/photos/450271/pexels-photo-450271.jpeg");
+    min-height: 32vw;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0 -15vw;
+	margin-top: -16px;
+}
+
+/*  adding image to about page, credit to images.pexels.com for free use stock photo.
+    Background is set to not repeat, and uses vw to change what part of the image you see
+    depending on the view window size. */
+.image_headerabout {
+	padding-top: 100px;
+    background-image: url("https://images.pexels.com/photos/7369/startup-photos.jpg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940");
+    min-height: 32vw;
+	background-repeat: no-repeat;
+	background-position: 0 -20vw;
+	margin-top: -16px;
+}
+
+/*  text design for home/index page image, font color is a light pink. */
+.image_text {
+    font-family: sans-serif;
+	width: 16vw;
+	padding-top: 6vw;
+	padding-left: 11vw;
+	color: #f7ece8;
+	font-weight: 700;
+	font-size: 4vw;
+	margin: auto;
+	text-align: left;
+}
+
+/*  text design for about page image, font color is a dark red/maroon. */
+.image_text2 {
+    font-family: sans-serif;
+    float: eft;
+    color: #721121;
+    margin-left: 4vw;
+	font-weight: 700;
+	font-size: 4vw;
+	text-align: left;
+	padding-top: 130px;
+	width: 800px;
+}
+
+/*  sidenav designs for both Refine.. and Post a job. The bars float left and the
+    background color is set to a light pink. Border is a darker pink. */
+.sidenav {
+    width: 20%;
+	height: 240px;
+	margin-top: 3vw;
+	font-family: sans-serif;
+	float: left;
+	background-color: #EEE4E1;
+	border: solid;
+	border-radius: 8px;
+    border-width: 0.8px;
+    border-color: #E6BEAE;
+}
+
+/*  Refine and Post a job title design; background is a vibrant green, and font color is white. Change width
+    to line up with sidenav border. */
+.side_refine {
+    width: 92%;
+    margin-top: -1px;
+	padding: 5px;
+	padding-left: 25px;
+	font-size: 1.6em;
+	font-weight: 550;
+	background-color: #4CAF50;
+	color: white;
+	border: solid;
+    border-width: 0.8px;
+    border-color: green;
+}
+
+/* adjusting icons used in Refine.. sidenav */
+.side_icon {
+	padding-left: 10px;
+	height: 18px;
+	color: #454851;
+}
+
+/* adjusting icons used in form sidenav (Post a job). */
+.form_icon {
+    height: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    float:left;
+}
+
+/* sidenav sub-heading font design (category, location, title, company) */
+.side_title {
+	color: #454851;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+/*  design and positioning of all form input of type text and select (category, location). */
+.sidenav input[type=text], select{
+    width: 15vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 2.4vw;
+	padding: 3px;
+	font-size: 1em;
+}
+
+/*  design and positioning of all form input of type text only (title, company, location) */
+.sidenav input[type=text] {
+    margin-left: 2.4vw;
+	padding: 3px;
+	border: none;
+	font-size: 1em;
+	width: 15vw;
+}
+
+/*  design for all buttons used (search, log in, logout, submit job. Button is a light green,
+    and has a curved radius. */
+.submit {
+    margin-top: 1vw;
+    margin-left: 2.4vw;
+    width: 6vw;
+    height: 1.5vw;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* when user hovers over submit button it changes to a darker green. */
+.submit:hover {
+    background-color: #45a049;
+}
+
+/* "recent jobs 1 to 10" text design, medium grey font color. */
+.recent_jobs {
+	font-family: 'Verdana', sans-serif;
+	font-weight: bold;
+	font-size: 80%;
+	color: #8e8e8e;
+	margin-left: 25vw;
+	padding: 10px;
+	margin-top: 2vw;
+}
+
+/*  wrapper around each job posting. 25vw is how far from the left the wrapper is,
+    ad changes depending on viewport size. */
+.wrapper{
+    margin-left: 25vw;
+    }
+
+/*  when hovering over job posting, add a green bar to the side. This is done by setting the
+    width after the user hovers. Lets the user know which listing they are focusing on. The
+    bar also has its own box shadow as to be consistent with the actual job listing div. */
+.wrapper:hover{
+    margin-left: 25vw;
+    width: 1vw;
+    transition: 0.8s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: green;
+}
+
+/*  design of job listing div. A margin is added to the top and bottom to separate each listing from
+    each other. The div has a box-shadow applied to mostly the bottom and sides. */
+.job {
+	margin-top: 1vw;
+	background-color: #fcfcfc;
+    width: 55vw;
+	padding: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	margin-bottom: 2vw;
+}
+
+/*  when hovering over the listing, 1vw margin is added to the left (size of wrapper:hover, to add space
+    from the wrapper hover bar. */
+.job:hover {
+    margin-left: 1vw;
+}
+
+/* design of job title text, font color green */
+.jobtitle {
+	font-family: 'Ariel', sans-serif;
+	font-size: 1.4em;
+	font-weight: 700;
+	color: green;
+	max-width: 690px;
+}
+
+/* design of company name text, font color pink */
+.company {
+	font-family: 'Ariel', sans-serif;
+	font-size: 1.1em;
+	font-weight: 600;
+	color: #DD96A2;
+}
+
+/* design of location text, font color light grey, floats to the right */
+.location {
+	font-family: 'Ariel', sans-serif;
+	font-size: 1em;
+	float: right;
+	color: #4d5057;
+}
+
+/* design of description text */
+.description {
+    margin-top: 15px;
+	font-family: 'Ariel', sans-serif;
+	font-weight: 500;
+	font-size: 1.2em;
+}
+
+
+.job a {
+    float:none;
+    }
+
+
+/*  design of ID/author/timestamp box at bottom of job listing div. Background colour is a dark grey,
+    and text is all uppercase. Font colour is white.*/
+.author {
+    font-family: 'Verdana', sans-serif;
+    display: inline-block;
+    color: #fff;
+    font-weight: 200px;
+    padding: 10px;
+    margin: -20px;
+    margin-top: 30px;
+    width: 56.1vw;
+    height: 0.8vw;
+    background-color: #3A4E48;
+    text-transform: uppercase;
+}
+
+/*  adds a wrapper to the footer text */
+.wrapper_f {
+    padding: 20px;
+}
+
+/*  sets footer distance from body and background color to a dark grey */
+footer {
+	margin-top: 100px;
+	background-color: #454851;
+	height: 10vw;
+}
+
+/* footer p text design, font is a light grey */
+footer p {
+	font-family: 'Ariel', sans-serif;
+	font-size: 1em;
+	display: block;
+	color: grey;
+}
+
+/* footer link contact info design, font is a green color */
+footer a {
+	font-family: 'Ariel', sans-serif;
+	font-size: 1em;
+	color: green;
+	text-decoration: none;
+}

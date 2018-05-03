@@ -1,0 +1,77 @@
+% rebase('base.html')
+
+<!-- navbar info is in rebase -->
+<!-- image header for home page, credit to image.pexels.com, image link in CSS -->
+<div class="image_header">
+    <div class="image_text" style="float:left">Welcome to Jobs.</div>
+</div>
+
+<!-- SIDENAV: sidenav dropdown form for categories -->
+<form class="sidenav">
+    <div class="side_refine">Refine..</div>
+    <div class="side_title"><i data-feather="align-left" class="side_icon"></i>Category</div>
+    <select>
+        <option selected disabled>Select industry..</option>
+        <option>Engineering</option>
+        <option>IT</option>
+        <option>Retail</option>
+        <option>Security</option>
+    </select>
+    <div class="side_title"><i data-feather="map-pin" class="side_icon"></i>Location</div>
+    <select>
+        <option selected disabled>Select location..</option>
+        <option>Sydney City</option>
+        <option>North Sydney</option>
+        <option>Eastern Sydney</option>
+        <option>Western Sydney</option>
+    </select>
+    <button type="submit" class ="submit">Search</button>
+</form>
+
+
+<!-- if user is logged in, show form for posting a job listing -->
+% if name:
+<form class="sidenav" method="post" action="/post" id="postform" style="margin-top:17vw;margin-left:-20%;height:450px">
+    <div class="side_refine">Post a Job..</div>
+
+    <img src="https://image.flaticon.com/icons/png/128/188/188234.png" class="form_icon"><div class="side_title">Title:</div>
+    <input type="text" placeholder="Job title" name="title"><br>
+
+    <img src="https://image.flaticon.com/icons/png/128/188/188235.png" class="form_icon"> <div class="side_title">Company:</div>
+    <input type="text" placeholder="Company name" name="company"><br>
+
+    <img src="https://image.flaticon.com/icons/png/128/188/188236.png" class="form_icon"><div class="side_title">Location:</div>
+    <input type="text" placeholder="Area" name="location"><br>
+
+    <img src="https://image.flaticon.com/icons/png/128/188/188237.png" class="form_icon"><div class="side_title">Description:</div>
+    <input type="text" style="height:100px;" placeholder="Job description" name="description"><br>
+
+    <button type="submit" class="submit">Submit Job</button>
+</form>
+% end
+
+<div class="recent_jobs">RECENT JOBS 1 TO 10</div>
+
+<!-- list jobs in the database, wrapper class provides animation when hovering -->
+% for i in positions:
+<div class="wrapper">
+    <div class="job">
+        <div class="location">{{i[4]}}</div>
+        <div class="jobtitle">{{i[3]}}</div>
+        <div class="company">{{i[5]}}</div>
+        <div class="description">{{!i[6][:100]}}..</div>
+        <a href='/positions/{{i[0]}}' style="font-family: 'Verdana', sans-serif;">Read More</a>
+        <div class="author">
+            <div style="float:right">{{i[1]}}</div>
+            <div>{{i[0]}} {{i[2]}}</div>
+        </div>
+    </div>
+</div>
+% end
+
+<!-- fetch all feather icons and place them -->
+<script>feather.replace()</script>
+
+</body>
+
+<!-- footer info in rebase -->

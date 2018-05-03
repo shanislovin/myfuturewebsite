@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="Shanis Lovin 44857713" content="">
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+
+  <title>{{title}}</title>
+
+</head>
+
+<!-- HEADER -->
+<header>
+    <h1>myfuture.com</h1>
+</header>
+
+<!-- script import for feather icons, credit to feather icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="#jobs">JOBS</a></li>
+        <li><a href="/views/about.html">About</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+
+        <!-- if a name is returned, display logged in as, else display login form-->
+        % if name:
+        <form class="logout" method="post" action="/logout" id="logoutform">
+            <div class="loggedinas">Logged in as {{name}}</div>
+            <button type="submit" input type="logout" class="submit" style="float:right;margin-top:7px;margin-bottom:-6px">Logout</button>
+        </form>
+        % end
+
+        % if not name:
+        <div class="login_button" onclick="f()">LOGIN
+            <i data-feather="user" style="float:left" class="user_ico"></i>
+        </div>
+        <div class="dropdown">
+            <form class="login" method="post" action="/login" id="loginform">
+                <button type="submit" input type="submit" value="submit" class="submit" style="float:right;margin-right:30px">Submit</button>
+                <input type="text" name="nick" class="login_input" placeholder="Enter Username..">
+                <input type="password" name="password" class="login_input" placeholder="Enter Password..">
+            </form>
+        </div>
+        % end
+
+        <!-- credit to Ariana Lynn @ https://codepen.io/arianalynn/pen/JXEmep for accordion LOGIN button javascript -->
+        <script>
+        function f() {
+            document.getElementsByClassName('dropdown')[0].classList.toggle('down');
+            if (document.getElementsByClassName('dropdown')[0].classList.contains('down')) {
+                setTimeout(function() {
+                    document.getElementsByClassName('dropdown')[0].style.overflow = 'visible'
+                }, 500)
+            } else {
+                document.getElementsByClassName('dropdown')[0].style.overflow = 'hidden'
+            }
+        }
+        </script>
+    </ul>
+</nav>
+
+<body>
+
+{{!base}}
+
+
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <center>
+        <div class="wrapper_f">
+            <p>terms & conditions</p>
+            <p>contact us</p>
+            <p>phone: <a href="tel:+61412345678"> +614 1234 5678</a></p>
+            <p>email: <a href="mailto:helpme@future.com">helpme@future.com</a>.</p></div>
+    </center>
+</footer>
+
+</html>
